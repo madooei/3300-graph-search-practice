@@ -34,14 +34,14 @@ public final class TwoTeams {
   // the other team from the vertex it was reached from. Returns false if some
   // edge joins two vertices on the same team.
   private static <V> boolean canSplit(Graph<V> graph, V start, Map<V, Integer> team) {
-    Queue<V> toVisit = new LinkedQueue<>();
+    Queue<V> toProcess = new LinkedQueue<>();
 
     team.put(start, TEAM_A);
-    toVisit.enqueue(start);
+    toProcess.enqueue(start);
 
-    while (!toVisit.isEmpty()) {
-      V v = toVisit.front();
-      toVisit.dequeue();
+    while (!toProcess.isEmpty()) {
+      V v = toProcess.front();
+      toProcess.dequeue();
       int mine = team.get(v);
       int theirs = TEAM_A;
       if (mine == TEAM_A) {
@@ -51,7 +51,7 @@ public final class TwoTeams {
       for (V neighbor : graph.neighbors(v)) {
         if (!team.containsKey(neighbor)) {
           team.put(neighbor, theirs);
-          toVisit.enqueue(neighbor);
+          toProcess.enqueue(neighbor);
         } else if (team.get(neighbor) == mine) {
           return false;  // an edge with both ends on the same team
         }
