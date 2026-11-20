@@ -60,6 +60,13 @@ public class UndirectedCycleTest {
   }
 
   @Test
+  public void cycleAtTheEndOfAPathIsFound() {
+    // The search from 0 finds the cycle 1, 2, 3 two calls deep.
+    int[][] edges = {{0, 1}, {1, 2}, {2, 3}, {3, 1}};
+    assertTrue(UndirectedCycle.hasCycle(undirected(4, edges)));
+  }
+
+  @Test
   public void chapterGraphHasACycle() {
     int[][] edges = {{0, 1}, {0, 2}, {0, 3}, {1, 4}, {3, 5}, {4, 6}, {5, 6}};
     assertTrue(UndirectedCycle.hasCycle(undirected(7, edges)));
