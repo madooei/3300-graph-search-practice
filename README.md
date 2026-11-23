@@ -1,6 +1,6 @@
 # Graph Search — Practice
 
-Two practice problems on graph search: decide whether an undirected graph has a cycle, and split the vertices of an undirected graph into two teams so that no edge joins two vertices on the same team. Each problem takes a `Graph<V>` and has a JUnit suite.
+Three practice problems on graph search: count the connected components of an undirected graph, decide whether an undirected graph has a cycle, and split the vertices of an undirected graph into two teams so that no edge joins two vertices on the same team. Each problem takes a `Graph<V>` and has a JUnit suite.
 
 ## Prerequisites
 
@@ -29,11 +29,16 @@ code/
       queue/
         Queue.java                    # unchanged copy of the course Queue ADT
         LinkedQueue.java              # unchanged copy of the course linked queue
+      stack/
+        Stack.java                    # unchanged copy of the course Stack ADT
+        ArrayStack.java               # unchanged copy of the course array stack
       practice/
+        Components.java               # connected components, with a depth-first search
         UndirectedCycle.java          # cycle in an undirected graph
         TwoTeams.java                 # two teams, with a breadth-first search
     test/
       practice/
+        ComponentsTest.java
         UndirectedCycleTest.java
         TwoTeamsTest.java
   scripts/
@@ -47,10 +52,12 @@ code/
 
 ## What's here
 
+- `practice.Components` — `countComponents`, a loop that runs a depth-first search from every vertex no earlier search reached.
 - `practice.UndirectedCycle` — `hasCycle`, a depth-first search that skips the vertex it came from.
 - `practice.TwoTeams` — `hasTwoTeams`, a breadth-first search that gives each vertex the other team from the vertex it was reached from.
-- `practice.UndirectedCycleTest` and `practice.TwoTeamsTest` — one suite per problem.
-- `graph.Graph<V>` and `graph.AdjacencyListGraph<V>` — unchanged copies of the graph chapter's classes. Both problems take a `Graph`.
+- `practice.ComponentsTest`, `practice.UndirectedCycleTest`, and `practice.TwoTeamsTest` — one suite per problem.
+- `graph.Graph<V>` and `graph.AdjacencyListGraph<V>` — unchanged copies of the graph chapter's classes. Every problem takes a `Graph`.
 - `set.Set<T>` and `set.HashSet<T>` — the same visited set as the chapter's code: a `Set` whose elements are the keys of a course `HashMap`. `hasCycle` keeps its visited vertices in one.
 - `map.Map<K, V>` and `map.HashMap<K, V>` — unchanged copies of the course's map, which `AdjacencyListGraph` and `HashSet` are built on. `hasTwoTeams` keeps each vertex's team in one.
 - `queue.Queue<T>` and `queue.LinkedQueue<T>` — unchanged copies of the course's queue. `hasTwoTeams` keeps the vertices still to visit in one.
+- `stack.Stack<T>` and `stack.ArrayStack<T>` — unchanged copies of the course's stack. `countComponents` keeps the vertices still to process in one.
