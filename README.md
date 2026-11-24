@@ -56,7 +56,7 @@ code/
 - `scripts/test.sh practice.TwoTeamsTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.TwoTeamsDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `practice.Components` — `countComponents`, a loop that runs a depth-first search from every vertex no earlier search reached.
 - `practice.UndirectedCycle` — `hasCycle`, a depth-first search that skips the vertex it came from.
