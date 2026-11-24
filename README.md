@@ -22,7 +22,7 @@ code/
         AdjacencyListGraph.java       # unchanged copy of the graph chapter's implementation
       set/
         Set.java                      # unchanged copy of the course Set ADT
-        HashSet.java                  # a set backed by the course HashMap
+        HashSet.java                  # a hash set with separate chaining, copied from the chaining chapter
       map/
         Map.java                      # unchanged copy of the course Map ADT
         HashMap.java                  # unchanged copy of the course hash table
@@ -64,7 +64,7 @@ code/
 - `practice.ComponentsTest`, `practice.UndirectedCycleTest`, and `practice.TwoTeamsTest` — one suite per problem.
 - `demo.ComponentsDemo`, `demo.UndirectedCycleDemo`, and `demo.TwoTeamsDemo` — one demo per solution class, each on an example from the notes.
 - `graph.Graph<V>` and `graph.AdjacencyListGraph<V>` — unchanged copies of the graph chapter's classes. Every problem takes a `Graph`.
-- `set.Set<T>` and `set.HashSet<T>` — the same visited set as the chapter's code: a `Set` whose elements are the keys of a course `HashMap`. `hasCycle` keeps its visited vertices in one.
-- `map.Map<K, V>` and `map.HashMap<K, V>` — unchanged copies of the course's map, which `AdjacencyListGraph` and `HashSet` are built on. `hasTwoTeams` keeps each vertex's team in one.
+- `set.Set<T>` and `set.HashSet<T>` — the same visited set as the chapter's code: the separate chaining chapter's hash set, copied unchanged. `hasCycle` keeps its visited vertices in one.
+- `map.Map<K, V>` and `map.HashMap<K, V>` — unchanged copies of the course's map, which `AdjacencyListGraph` is built on. `hasTwoTeams` keeps each vertex's team in one.
 - `queue.Queue<T>` and `queue.LinkedQueue<T>` — unchanged copies of the course's queue. `hasTwoTeams` keeps the vertices still to visit in one.
 - `stack.Stack<T>` and `stack.ArrayStack<T>` — unchanged copies of the course's stack. `countComponents` keeps the vertices still to process in one.
