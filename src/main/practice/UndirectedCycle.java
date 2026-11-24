@@ -17,7 +17,7 @@ public final class UndirectedCycle {
     Set<V> visited = new HashSet<>();
 
     for (V v : graph.vertices()) {
-      if (!visited.contains(v) && hasCycleFrom(graph, v, null, visited)) {
+      if (!visited.contains(v) && search(graph, v, null, visited)) {
         return true;
       }
     }
@@ -26,7 +26,7 @@ public final class UndirectedCycle {
 
   // Searches from v, which was reached from parent, and returns true if the
   // search finds a cycle. The parent is null for the vertex a search starts from.
-  private static <V> boolean hasCycleFrom(Graph<V> graph, V v, V parent, Set<V> visited) {
+  private static <V> boolean search(Graph<V> graph, V v, V parent, Set<V> visited) {
     visited.add(v);
 
     for (V neighbor : graph.neighbors(v)) {
@@ -36,7 +36,7 @@ public final class UndirectedCycle {
       if (visited.contains(neighbor)) {
         return true;  // a second route into a vertex we have already seen
       }
-      if (hasCycleFrom(graph, neighbor, v, visited)) {
+      if (search(graph, neighbor, v, visited)) {
         return true;
       }
     }
