@@ -22,8 +22,8 @@ public final class TwoTeams {
   public static <V> boolean hasTwoTeams(Graph<V> graph) {
     Map<V, Integer> team = new HashMap<>();
 
-    for (V v : graph.vertices()) {
-      if (!team.containsKey(v) && !search(graph, v, team)) {
+    for (V vertex : graph.vertices()) {
+      if (!team.containsKey(vertex) && !search(graph, vertex, team)) {
         return false;
       }
     }

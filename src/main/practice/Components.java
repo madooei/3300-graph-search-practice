@@ -19,10 +19,10 @@ public final class Components {
     Set<V> visited = new HashSet<>();
     int count = 0;
 
-    for (V v : graph.vertices()) {
-      if (!visited.contains(v)) {
+    for (V vertex : graph.vertices()) {
+      if (!visited.contains(vertex)) {
         count++;
-        search(graph, v, visited);
+        search(graph, vertex, visited);
       }
     }
     return count;
@@ -34,9 +34,9 @@ public final class Components {
     visited.add(start);
     toProcess.push(start);
     while (!toProcess.isEmpty()) {
-      V v = toProcess.top();
+      V vertex = toProcess.top();
       toProcess.pop();
-      for (V neighbor : graph.neighbors(v)) {
+      for (V neighbor : graph.neighbors(vertex)) {
         if (!visited.contains(neighbor)) {
           visited.add(neighbor);
           toProcess.push(neighbor);
