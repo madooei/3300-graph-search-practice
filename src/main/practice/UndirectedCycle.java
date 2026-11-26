@@ -17,9 +17,9 @@ public final class UndirectedCycle {
     throw new UnsupportedOperationException("TODO: Implement me");
   }
 
-  // Searches from v, which was reached from parent, and returns true if the
+  // Searches from vertex, which was reached from parent, and returns true if the
   // search finds a cycle. The parent is null for the vertex a search starts from.
-  private static <V> boolean search(Graph<V> graph, V v, V parent, Set<V> visited) {
+  private static <V> boolean search(Graph<V> graph, V vertex, V parent, Set<V> visited) {
     // TODO: Implement me
     throw new UnsupportedOperationException("TODO: Implement me");
   }
